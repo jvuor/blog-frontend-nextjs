@@ -1,17 +1,15 @@
 import Head from 'next/head'
-import styles from '../../styles/Home.module.css'
 import { getBlogs } from '../controllers/blogs'
 
 export default function Home({ blogs }) {
-  console.log(blogs);
   return (
     <div>
       <Head>
-        <title>Jussi Vuorinen</title>
+        <title>Jussi</title>
       </Head>
 
-      <p>Jussin Blogi</p>
-      {blogs.map(blog => <div>{blog.title}</div>)}
+      <p className="text-center">Jussin Blogi</p>
+      {blogs.map(blog => <div key={blog.id}>{blog.title}</div>)}
     </div>
   )
 }

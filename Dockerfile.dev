@@ -2,7 +2,8 @@ FROM node:14
 
 SHELL ["/bin/bash", "-c"]
 
-ENV NODE_ENV development
+ENV PATH=/app/node_modules/.bin:$PATH
+ENV NODE_ENV=development
 
 WORKDIR /app
 
