@@ -1,6 +1,6 @@
 version: '3'
 services:
-  node:
+  frontend:
     build:
       context: .
       dockerfile: ./Dockerfile.dev
@@ -12,3 +12,7 @@ services:
      - '/app/node_modules'
     environment:
      - CHOKIDAR_USEPOLLING=true
+  backend:
+    image: blogbackend:latest
+    ports:
+      - 3003:3003
