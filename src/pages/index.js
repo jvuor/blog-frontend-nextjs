@@ -1,4 +1,6 @@
 import Head from 'next/head'
+
+import BlogList from '../components/blog-list'
 import { getBlogs } from '../controllers/blogs'
 
 export default function Home({ blogs }) {
@@ -7,9 +9,7 @@ export default function Home({ blogs }) {
       <Head>
         <title>Jussi</title>
       </Head>
-
-      <p className="text-center">Jussin Blogi</p>
-      {blogs.map(blog => <div key={blog.id}>{blog.title}</div>)}
+      <BlogList blogs={blogs}></BlogList>
     </div>
   )
 }
